@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scanPeriod="10 seconds" debug="false" scan="true">
+
+    <property name="LOG_DIR" value="./logs"/>
+
+
+    <appender name="STDOUTAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date %level [%X{traceid}] - %C{1}:%L %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SpringAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_DIR}/spring.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_DIR}/spring.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date %level [%X{traceid}] - %C{1}:%L %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ErrorAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_DIR}/jpe_error.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_DIR}/jpe-error.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date %level [%thread] %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <appender name="ApplicationAppender" class="ch.qos.logback.core.rolling.RollingFileAppender" additivity="false">
+        <File>${LOG_DIR}/jpe.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_DIR}/jpe.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date %level [%X{traceid}] - %C{1}:%L %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+    </appender>
+
+    <appender name="TransactionAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_DIR}/jpe-tx.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_DIR}/jpe-tx.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date %level %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework">
+        <level value="INFO"/>
+        <appender-ref ref="SpringAppender"/>
+    </logger>
+
+    <logger name="com.ttech.jpe" additivity="false" level="DEBUG">
+        <appender-ref ref="ApplicationAppender"/>
+        <appender-ref ref="ErrorAppender"/>
+    </logger>
+
+    <logger name="TransactionLogger" additivity="false" level="DEBUG">
+        <appender-ref ref="TransactionAppender"/>
+    </logger>
+
+    <root level="ERROR">
+        <appender-ref ref="STDOUTAppender"/>
+    </root>
+</configuration>
