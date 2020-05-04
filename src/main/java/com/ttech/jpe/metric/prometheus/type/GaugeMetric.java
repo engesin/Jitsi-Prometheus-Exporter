@@ -64,7 +64,7 @@ public enum GaugeMetric implements IMetric {
 
     JITSI_JICOFO_CONFERENCE_SIZES("jitsi_jicofo_conference_sizes", "jitsi_jicofo_conference_sizes", MetricLabels.getCommaSeperated(MetricLabels.Names.host, MetricLabels.Names.conferenceSize)),
 
-    JITSI_JICOFO_HEALTH_STATUS("jitsi_jicofo_health_status", "jitsi_jicofo_conferences_by_audio_senders", MetricLabels.getCommaSeperated(MetricLabels.Names.host));
+    JITSI_JICOFO_HEALTH_STATUS("jitsi_jicofo_health_status", "jitsi_jicofo_health_status", MetricLabels.getCommaSeperated(MetricLabels.Names.host));
 
 
     private HashMap<MetricParamType, String> params;
