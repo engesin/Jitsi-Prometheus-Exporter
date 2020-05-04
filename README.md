@@ -125,7 +125,7 @@ jitsi_jvb_loss_rate_upload{host="localhost:7778",} 0.0
 # TYPE jitsi_jicofo_total_participants counter
 jitsi_jicofo_total_participants{host="localhost:8889",} 0.0
 jitsi_jicofo_total_participants{host="localhost:8888",} 0.0
-# HELP jitsi_jicofo_health_status jitsi_jicofo_conferences_by_audio_senders
+# HELP jitsi_jicofo_health_status jitsi_jicofo_health_status
 # TYPE jitsi_jicofo_health_status gauge
 jitsi_jicofo_health_status{host="localhost:8889",} 0.0
 jitsi_jicofo_health_status{host="localhost:8888",} 0.0
