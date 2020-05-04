@@ -54,7 +54,7 @@ jpe.stats.check.miliseconds=15000
 
  ## Dashboard
 
-Sample dashboard..
+Sample dashboard.. [karrieretutor/jitsi-prom-exporter](https://grafana.com/grafana/dashboards/11925) dashboard is modified for this purpuse. You can create/use any dashboard by editing metric names only..
 
 ![Jitsi Meet Dashboard](dashboards/dashboard.jpg)
 
