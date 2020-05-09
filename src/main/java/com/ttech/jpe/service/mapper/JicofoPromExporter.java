@@ -46,8 +46,13 @@ public class JicofoPromExporter extends PromExporterAbstract<JicofoStats> {
     @Override
     public void feedMetrics(JicofoStats statistics) {
 
-        if (StringUtils.isEmpty(statistics.getHost()))
+        // if reference of the statistics is same with default Stats type, this means we can not fetch metric data from remote..
+        // feeding default empty data is misleading so we only set health status and return.
+        if(statistics == JICOFO_STATS){
+            metricsRegistry.observe(GaugeMetric.JITSI_JICOFO_HEALTH_STATUS, statistics.isHealth() ? 1 : 0, statistics.getHost());
+            metricsRegistry.observe(CounterMetric.JITSI_JPE_UNSUCCESSFUL_DATA_FETCH, 1,  statistics.getHost(), "JICOFO" ,String.valueOf(statistics.isHealth() ));
             return;
+        }
 
         counters(statistics);
 
@@ -67,8 +72,9 @@ public class JicofoPromExporter extends PromExporterAbstract<JicofoStats> {
     }
 
     @Override
-    JicofoStats getDefaultInstance(URL sourceURL) {
+    JicofoStats getDefaultInstance(URL sourceURL, boolean hostHealthy) {
         JICOFO_STATS.setHost(setHostParam(sourceURL));
+        JICOFO_STATS.setHealth(hostHealthy);
         return JICOFO_STATS;
     }
 

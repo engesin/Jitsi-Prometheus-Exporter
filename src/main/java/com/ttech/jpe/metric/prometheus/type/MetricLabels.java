@@ -15,7 +15,9 @@ public class MetricLabels {
 
     public enum Names {
         host,
-        conferenceSize
+        conferenceSize,
+        reason,
+        heath
     }
 
 }

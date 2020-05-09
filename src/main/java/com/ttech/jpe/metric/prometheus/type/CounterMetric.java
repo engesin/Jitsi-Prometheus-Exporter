@@ -54,7 +54,10 @@ public enum CounterMetric implements IMetric {
     JITSI_JICOFO_TOTAL_NOT_LOADED_IN_REGION("jitsi_jicofo_total_not_loaded_in_region", "jitsi_jicofo_total_not_loaded_in_region", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
     JITSI_JICOFO_TOTAL_SPLIT_DUE_TO_REGION("jitsi_jicofo_total_split_due_to_region", "jitsi_jicofo_total_split_due_to_region", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
     JITSI_JICOFO_TOTAL_LEAST_LOADED_IN_CONFERENCE("jitsi_jicofo_total_least_loaded_in_conference", "jitsi_jicofo_total_least_loaded_in_conference", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
-    JITSI_JICOFO_TOTAL_LEAST_LOADED("jitsi_jicofo_total_least_loaded", "jitsi_jicofo_total_least_loaded", MetricLabels.getCommaSeperated(MetricLabels.Names.host));
+    JITSI_JICOFO_TOTAL_LEAST_LOADED("jitsi_jicofo_total_least_loaded", "jitsi_jicofo_total_least_loaded", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
+
+    JITSI_JPE_UNSUCCESSFUL_DATA_FETCH("jitsi_jpe_unsuccessful_data_fetch", "JPE cannot get data from remote", MetricLabels.getCommaSeperated(MetricLabels.Names.host, MetricLabels.Names.reason, MetricLabels.Names.heath));
+
 
 
     private HashMap<MetricParamType, String> params;

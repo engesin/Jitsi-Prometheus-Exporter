@@ -64,7 +64,7 @@ public abstract class PromExporterAbstract<T> {
         if (resEntityMetric.getStatusCode().is2xxSuccessful()) {
             metricObject = metricMapper(resEntityMetric.getBody(), hostHealthy, sourceURL);
         } else {
-            metricObject = getDefaultInstance(sourceURL);
+            metricObject = getDefaultInstance(sourceURL,hostHealthy);
         }
 
         if (metricObject != null)
@@ -118,9 +118,10 @@ public abstract class PromExporterAbstract<T> {
 
     /**
      * @param sourceURL
+     * @param hostHealthy
      * @return default metric type to be used for exceptional cases
      */
-    abstract T getDefaultInstance(URL sourceURL);
+    abstract T getDefaultInstance(URL sourceURL, boolean hostHealthy);
 
     String setHostParam(URL url) {
 

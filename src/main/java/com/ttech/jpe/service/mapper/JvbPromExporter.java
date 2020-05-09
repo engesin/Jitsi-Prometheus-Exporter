@@ -46,8 +46,11 @@ public class JvbPromExporter extends PromExporterAbstract<JvbStats> {
     @Override
     public void feedMetrics(JvbStats statistics) {
 
-        if (StringUtils.isEmpty(statistics.getHost()))
+        if(statistics == JVB_STATS){
+            metricsRegistry.observe(GaugeMetric.JITSI_JVB_HEALTH_STATUS, statistics.isHealth() ? 1 : 0, statistics.getHost());
+            metricsRegistry.observe(CounterMetric.JITSI_JPE_UNSUCCESSFUL_DATA_FETCH, 1,  statistics.getHost(), "JVB" ,String.valueOf(statistics.isHealth() ));
             return;
+        }
 
         counters(statistics);
 
@@ -78,9 +81,10 @@ public class JvbPromExporter extends PromExporterAbstract<JvbStats> {
     }
 
     @Override
-    JvbStats getDefaultInstance(URL sourceURL) {
+    JvbStats getDefaultInstance(URL sourceURL, boolean hostHealthy) {
 
         JVB_STATS.setHost(setHostParam(sourceURL));
+        JVB_STATS.setHealth(hostHealthy);
         return JVB_STATS;
     }
 
