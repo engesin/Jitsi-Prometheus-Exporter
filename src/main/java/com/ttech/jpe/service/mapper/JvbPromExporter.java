@@ -46,6 +46,12 @@ public class JvbPromExporter extends PromExporterAbstract<JvbStats> {
     @Override
     public void feedMetrics(JvbStats statistics) {
 
+        gauges(statistics);
+
+        histogram(statistics);
+
+        // if reference of the statistics is same with default Stats type, this means we can not fetch metric data from remote..
+        // feeding default empty data for counter type is misleading so we only set health status and return.
         if(statistics == JVB_STATS){
             metricsRegistry.observe(GaugeMetric.JITSI_JVB_HEALTH_STATUS, statistics.isHealth() ? 1 : 0, statistics.getHost());
             metricsRegistry.observe(CounterMetric.JITSI_JPE_UNSUCCESSFUL_DATA_FETCH, 1,  statistics.getHost(), "JVB" ,String.valueOf(statistics.isHealth() ));
@@ -53,10 +59,6 @@ public class JvbPromExporter extends PromExporterAbstract<JvbStats> {
         }
 
         counters(statistics);
-
-        gauges(statistics);
-
-        histogram(statistics);
 
     }
 

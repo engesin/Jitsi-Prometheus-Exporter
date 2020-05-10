@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Data
@@ -47,9 +48,9 @@ public class JvbStats {
     private long endpoints_sending_video = 0L;
     private long packet_rate_download = 0L;
     private long muc_clients_configured = 0L;
-    private List<Integer> conference_sizes = new ArrayList<>();
+    private List<Integer> conference_sizes = new ArrayList<>(Collections.nCopies(22, 0));
     private long total_packets_sent_octo = 0L;
-    private List<Integer> conferences_by_video_senders = new ArrayList<>();
+    private List<Integer> conferences_by_video_senders = new ArrayList<>(Collections.nCopies(22, 0));
     private long videostreams = 0L;
     private long jitter_aggregate = 0L;
     private long total_ice_succeeded_tcp = 0L;
@@ -63,7 +64,7 @@ public class JvbStats {
     private long total_data_channel_messages_sent = 0L;
     private long total_bytes_received_octo = 0L;
     private long octo_send_packet_rate = 0L;
-    private List<Integer> conferences_by_audio_senders = new ArrayList<>();
+    private List<Integer> conferences_by_audio_senders = new ArrayList<>(Collections.nCopies(22, 0));
     private long total_conferences_created = 0L;
     private long total_ice_failed = 0L;
     private long threads = 0L;

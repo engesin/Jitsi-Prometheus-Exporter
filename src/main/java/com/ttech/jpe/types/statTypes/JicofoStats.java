@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Data
@@ -18,7 +19,7 @@ public class JicofoStats {
     private Long largest_conference = 0L;
     private Long total_sip_call_failures = 0L;
     private Long total_participants = 0L;
-    private List<Integer> conference_sizes = new ArrayList<>();
+    private List<Integer> conference_sizes = new ArrayList<>(Collections.nCopies(22, 0));
     private Bridge_selector bridge_selector = new Bridge_selector();
     private Long total_conferences_created = 0L;
     private Long total_recording_failures = 0L;

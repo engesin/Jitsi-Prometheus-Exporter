@@ -56,7 +56,7 @@ public enum CounterMetric implements IMetric {
     JITSI_JICOFO_TOTAL_LEAST_LOADED_IN_CONFERENCE("jitsi_jicofo_total_least_loaded_in_conference", "jitsi_jicofo_total_least_loaded_in_conference", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
     JITSI_JICOFO_TOTAL_LEAST_LOADED("jitsi_jicofo_total_least_loaded", "jitsi_jicofo_total_least_loaded", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
 
-    JITSI_JPE_UNSUCCESSFUL_DATA_FETCH("jitsi_jpe_unsuccessful_data_fetch", "JPE cannot get data from remote", MetricLabels.getCommaSeperated(MetricLabels.Names.host, MetricLabels.Names.reason, MetricLabels.Names.heath));
+    JITSI_JPE_UNSUCCESSFUL_DATA_FETCH("jitsi_jpe_unsuccessful_data_fetch", "JPE cannot get data from remote", MetricLabels.getCommaSeperated(MetricLabels.Names.host, MetricLabels.Names.source, MetricLabels.Names.heath));
 
 
 
