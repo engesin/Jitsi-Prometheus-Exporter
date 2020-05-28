@@ -1,6 +1,6 @@
 # Jitsi Prometheus Exporter (JPE)
 
-Jitsi Prometheus Exporter (JPE) is a Spring Boot application wtiten in Java.
+Jitsi Prometheus Exporter (JPE) is a Spring Boot application written in Java to monitor statistics for integration of Turkcell [BiP](https://bip.com/).
 
 JPE collects statistics from [Jitsi](https://jitsi.org) server components of [Jicofo](https://github.com/jitsi/jicofo) and [Jitsi Videobridge](https://github.com/jitsi/jitsi-videobridge), and publishes them as [Prometheus](https://prometheus.io) metrics.
 
