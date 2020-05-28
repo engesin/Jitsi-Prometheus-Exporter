@@ -82,4 +82,27 @@ public class JvbStats {
     private long total_failed_conferences = 0L;
     private long mucs_joined = 0L;
 
+
+    public void setConference_sizes(Object value) {
+        if (value instanceof List && ((List) value).size() == 0)
+            this.conference_sizes = (List<Integer>) value;
+        else
+            this.conference_sizes = new ArrayList<>(Collections.nCopies(22, 0));;
+
+    }
+
+    public void setConferences_by_video_senders(Object value) {
+        if (value instanceof List && ((List) value).size() == 0)
+            this.conferences_by_video_senders = (List<Integer>) value;
+        else
+            this.conferences_by_video_senders = new ArrayList<>(Collections.nCopies(22, 0));;
+    }
+
+    public void setConferences_by_audio_senders(Object value) {
+        if (value instanceof List && ((List) value).size() == 0)
+            this.conferences_by_audio_senders = (List<Integer>) value;
+        else
+            this.conferences_by_audio_senders = new ArrayList<>(Collections.nCopies(22, 0));;
+    }
+
 }
