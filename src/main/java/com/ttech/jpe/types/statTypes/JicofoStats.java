@@ -28,7 +28,7 @@ public class JicofoStats {
     private Long participants = 0L;
 
     public void setConference_sizes(Object value) {
-        if (value instanceof List && ((List) value).size() == 0)
+        if (value instanceof List && ((List) value).size() > 0)
             this.conference_sizes = (List<Integer>) value;
         else
             this.conference_sizes = new ArrayList<>(Collections.nCopies(22, 0));
