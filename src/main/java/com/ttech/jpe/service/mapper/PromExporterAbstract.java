@@ -111,7 +111,9 @@ public abstract class PromExporterAbstract<T> {
             metricsRegistry.observe(metric, diff, label);
         } else if (diff < 0) {
             metricsRegistry.clearMetric(metric); //this means that source application resets its value
-            metricsRegistry.observe(metric, diff, label); //set first value of the metric after reset
+            metricsRegistry.observe(metric, Math.abs(diff), label); //set first value
+            // of the
+            // metric after reset
         }
 
     }
