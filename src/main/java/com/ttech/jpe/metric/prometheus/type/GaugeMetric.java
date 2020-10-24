@@ -32,7 +32,7 @@ public enum GaugeMetric implements IMetric {
     JITSI_JVB_ENDPOINTS_SENDING_VIDEO("jitsi_jvb_endpoints_sending_video", "jitsi_jvb_endpoints_sending_video", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
     JITSI_JVB_PACKET_RATE_DOWNLOAD("jitsi_jvb_packet_rate_download", "jitsi_jvb_packet_rate_download", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
     JITSI_JVB_MUC_CLIENTS_CONFIGURED("jitsi_jvb_muc_clients_configured", "jitsi_jvb_muc_clients_configured", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
-    JITSI_JVB_VIDEOSTREAMS("jitsi_jvb_videostreams", "jitsi_jvb_videostreams", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
+    JITSI_JVB_STRESS_LEVEL("jitsi_jvb_stress_level", "jitsi_jvb_stress_level", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
     JITSI_JVB_JITTER_AGGREGATE("jitsi_jvb_jitter_aggregate", "jitsi_jvb_jitter_aggregate", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
     JITSI_JVB_OCTO_ENDPOINTS("jitsi_jvb_octo_endpoints", "jitsi_jvb_octo_endpoints", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
     JITSI_JVB_CURRENT_TIMESTAMP("jitsi_jvb_current_timestamp", "jitsi_jvb_current_timestamp", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
@@ -45,6 +45,7 @@ public enum GaugeMetric implements IMetric {
     JITSI_JVB_OCTO_RECEIVE_PACKET_RATE("jitsi_jvb_octo_receive_packet_rate", "jitsi_jvb_octo_receive_packet_rate", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
     JITSI_JVB_RTP_LOSS("jitsi_jvb_rtp_loss", "jitsi_jvb_rtp_loss", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
     JITSI_JVB_ENDPOINTS_SENDING_AUDIO("jitsi_jvb_endpoints_sending_audio", "jitsi_jvb_endpoints_sending_audio", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
+    JITSI_JVB_DTLS_FAILED_ENDPOINTS("jitsi_jvb_dtls_failed_endpoints", "jitsi_jvb_dtls_failed_endpoints", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
     JITSI_JVB_MUCS_CONFIGURED("jitsi_jvb_mucs_configured", "jitsi_jvb_mucs_configured", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
     JITSI_JVB_MUCS_JOINED("jitsi_jvb_mucs_joined", "jitsi_jvb_mucs_joined", MetricLabels.getCommaSeperated(MetricLabels.Names.host)),
 

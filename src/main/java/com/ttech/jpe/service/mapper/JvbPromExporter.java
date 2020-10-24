@@ -111,7 +111,7 @@ public class JvbPromExporter extends PromExporterAbstract<JvbStats> {
         metricsRegistry.observe(GaugeMetric.JITSI_JVB_ENDPOINTS_SENDING_VIDEO, jvbStats.getEndpoints_sending_video(), jvbStats.getHost());
         metricsRegistry.observe(GaugeMetric.JITSI_JVB_PACKET_RATE_DOWNLOAD, jvbStats.getPacket_rate_download(), jvbStats.getHost());
         metricsRegistry.observe(GaugeMetric.JITSI_JVB_MUC_CLIENTS_CONFIGURED, jvbStats.getMuc_clients_configured(), jvbStats.getHost());
-        metricsRegistry.observe(GaugeMetric.JITSI_JVB_VIDEOSTREAMS, jvbStats.getVideostreams(), jvbStats.getHost());
+        metricsRegistry.observe(GaugeMetric.JITSI_JVB_STRESS_LEVEL, jvbStats.getStress_level(), jvbStats.getHost());
         metricsRegistry.observe(GaugeMetric.JITSI_JVB_JITTER_AGGREGATE, jvbStats.getJitter_aggregate(), jvbStats.getHost());
         metricsRegistry.observe(GaugeMetric.JITSI_JVB_OCTO_ENDPOINTS, jvbStats.getOcto_endpoints(), jvbStats.getHost());
         metricsRegistry.observe(GaugeMetric.JITSI_JVB_CONFERENCES, jvbStats.getConferences(), jvbStats.getHost());
@@ -123,6 +123,7 @@ public class JvbPromExporter extends PromExporterAbstract<JvbStats> {
         metricsRegistry.observe(GaugeMetric.JITSI_JVB_OCTO_RECEIVE_PACKET_RATE, jvbStats.getOcto_receive_packet_rate(), jvbStats.getHost());
         metricsRegistry.observe(GaugeMetric.JITSI_JVB_RTP_LOSS, jvbStats.getRtp_loss(), jvbStats.getHost());
         metricsRegistry.observe(GaugeMetric.JITSI_JVB_ENDPOINTS_SENDING_AUDIO, jvbStats.getEndpoints_sending_audio(), jvbStats.getHost());
+        metricsRegistry.observe(GaugeMetric.JITSI_JVB_DTLS_FAILED_ENDPOINTS, jvbStats.getDtls_failed_endpoints(), jvbStats.getHost());
         metricsRegistry.observe(GaugeMetric.JITSI_JVB_MUCS_CONFIGURED, jvbStats.getMucs_configured(), jvbStats.getHost());
         metricsRegistry.observe(GaugeMetric.JITSI_JVB_MUCS_JOINED, jvbStats.getMucs_joined(), jvbStats.getHost());
 
