@@ -49,7 +49,7 @@ jpe.stats.check.miliseconds=15000
 2. Return of metric requests and application logs are generated under the LOG_DIR defined in logback.xml. To change logging options at runtime, add --logging.config=path_to_logback_xml/logback.xml.
 
  ```sh
-/usr/bin/java -server -d64 -DCONFIG_HOME=./conf -jar ./jpe-0.0.1-SNAPSHOT.jar
+/usr/bin/java -server -d64 -DCONFIG_HOME=./conf -jar ./jpe-0.0.5-SNAPSHOT.jar
  ```
 
  ## Dashboard
