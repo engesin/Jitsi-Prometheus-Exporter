@@ -12,6 +12,19 @@ There is a [documentation](https://github.com/jitsi/jitsi-videobridge/blob/maste
 
 [Jitsi Stats HTTP-API documentation](https://github.com/jitsi/jitsi-videobridge/blob/master/doc/rest.md)
 
+## Install
+
+* Install JDK and Maven if missing:
+```sh
+apt-get install openjdk-8-jdk maven
+```
+
+* Build the package.
+
+```sh
+mvn package -DskipTests
+```
+
 ## Settings
 
 * conf/app-override
