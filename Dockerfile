@@ -8,10 +8,10 @@ WORKDIR /usr/src/exporter
 RUN mvn install
 
 FROM java:8
-COPY --from=builder /usr/src/exporter/target/jpe-0.0.4-SNAPSHOT.jar /usr/src/exporter/
+COPY --from=builder /usr/src/exporter/target/jpe-0.0.5-SNAPSHOT.jar /usr/src/exporter/
 COPY conf /usr/src/exporter/conf
 
 WORKDIR /usr/src/exporter
-ENTRYPOINT ["java","-d64","-DCONFIG_HOME./conf", "-jar", "./jpe-0.0.4-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-d64","-DCONFIG_HOME./conf", "-jar", "./jpe-0.0.5-SNAPSHOT.jar"]
 
 VOLUME [ "/usr/src/exporter/conf" ]
