@@ -12,6 +12,6 @@ COPY --from=builder /usr/src/exporter/target/jpe-0.0.5-SNAPSHOT.jar /usr/src/exp
 COPY conf /usr/src/exporter/conf
 
 WORKDIR /usr/src/exporter
-ENTRYPOINT ["java","-d64","-DCONFIG_HOME./conf", "-jar", "./jpe-0.0.5-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-d64","-DCONFIG_HOME=./conf", "-jar", "./jpe-0.0.5-SNAPSHOT.jar"]
 
 VOLUME [ "/usr/src/exporter/conf" ]
